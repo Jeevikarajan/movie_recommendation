@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation Systems</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Movie Recommendation System</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="movie_title">Enter Movie Title:</label>
+                <input type="text" name="movie_title" id="movie_title" class="form-control" required>
+            </div>
+            {% if show_description %}
+                <label for="description">Enter Movie Description:</label>
+                <textarea name="description" id="description" class="form-control" rows="4" required></textarea>
+                </div>
+            {% endif %}
+            <button type="submit" class="btn btn-primary mt-3">Get Recommendations</button> 
+        </form>
+
+        {% if not recommendations.empty %}
+            <h2 class="mt-5">RECOMMENDATIONS</h2>
+            <ul class="list-group mt-3">
+                {% for movie in recommendations.itertuples() %}
+                <li class="card-body">
+                    <a href="https://www.google.com/search?q={{ movie.title|urlencode }}" target="_blank">{{ movie.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            {% if show_description %}
+                <p class="mt-3 text-danger">No recommendations found based on the provided description.</p>
+            {% endif %}
+        {% endif %}
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

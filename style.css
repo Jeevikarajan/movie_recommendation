@@ -1,0 +1,109 @@
+body {
+    background-color: #6cb4de; 
+    background-size: cover; 
+    font-family: Quicksand, Arial, sans-serif; 
+    color: #0c1f29;
+    margin: 0; 
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    min-height: 100vh;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 30px; 
+    color: rgb(195, 189, 189); 
+}
+
+main {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    width: 100%; 
+}
+
+.recommendation-form {
+    display: inline-flex; 
+    flex-direction: column-reverse; 
+    align-items: center; 
+}
+
+input[type="text"],
+textarea {
+    margin-top: 10px;
+    width: 300px;
+    position: relative;
+    left: 90px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    display:flex;
+    border-radius: 5px; 
+    font-size: 16px; 
+    background-color: #f3eee8; 
+}
+
+button {
+    background-color: #1e3f51;
+    color: #e8f7ff; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 30px; 
+    font-size: 16px; 
+    font-family: Quicksand;
+    cursor: pointer; 
+}
+
+button:hover {
+    background-color: rgb(13, 20, 13); 
+}
+
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.movie-item {
+    background-color: rgba(157, 153, 132, 0.8); 
+    border-radius: 10px;
+    padding: 15px; 
+    margin: 10px 0; 
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+    transition: transform 0.2s; 
+}
+
+.movie-item:hover {
+    transform: scale(1.05); 
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    color: #b7e5ff;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+    line-height: 50px;
+    display: inline-block;
+    background-color: #3c7596;
+    border-radius: 30px;
+}
+a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
+footer {
+    margin-top: 30px; 
+    font-size: 12px; 
+    color: white; 
+}
